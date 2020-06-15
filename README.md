@@ -4,7 +4,10 @@ This is the final project for the WPP python programming course. It uses a Flask
 
 ## Instillation
 
-TBD
+Use the package manager pip to install Flask.
+```bash
+pip install Flask
+```
 
 ## Usage
 
