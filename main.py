@@ -17,7 +17,7 @@ def home():
 
 @app.route('/team/<ID>')
 def teams(ID):
-	One_Team_URL = ("https://statsapi.web.nhl.com/api/v1/teams/"+ID)
+	One_Team_URL = ("https://statsapi.web.nhl.com/api/v1/teams/"+ID+"?expand=team.stats")
 	r = requests.get(One_Team_URL)
 	return r.json()
 
