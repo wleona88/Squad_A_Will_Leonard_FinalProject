@@ -9,6 +9,11 @@ Use the package manager pip to install flask.
 pip install Flask
 ```
 
+Also, install Jinja using the package manager pip.
+```bash
+pip install jinja2
+```
+
 ## Usage
 
 TBD
