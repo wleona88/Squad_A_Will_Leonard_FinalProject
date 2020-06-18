@@ -1,6 +1,7 @@
 
 #imports
 import requests
+import pandas as pd
 
 
 #froms
@@ -14,7 +15,8 @@ def home():
 	Teams_URL = "https://statsapi.web.nhl.com/api/v1/teams"
 	r = requests.get(Teams_URL)
 	r = r.json()
-	return render_template("home.html")
+	return r
+	#return render_template("home.html")
 
 @app.route('/teamID/<ID>.html')
 def teams(ID):
@@ -28,10 +30,13 @@ def teams(ID):
 	team_api_info = team_splits["team"]
 	final_team_name = team_api_info["name"]
 	team = final_team_name
-	final_stats["team"] = final_team_name
+	# final_stats["team"] = final_team_name
+	df = pd.DataFrame(data=final_stats,index=[""])
+	df.to_html()
+
 	
 	#return f"The stats of the {final_team_name} are: {final_stats}"
-	return render_template("team.html", team=team)
+	return render_template("team.html", team=team, teamstats=df)
 
 if __name__ == "__main__":
 	app.run(debug=True)

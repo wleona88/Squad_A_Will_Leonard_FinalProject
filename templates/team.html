@@ -1,1 +1,26 @@
-<h1>This is the page for the {{team}}</h1>
+<!doctype html>
+<html>
+	<head>
+		<!-- CSS only -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<title>{{team}}</title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<h2>This is the page for the {{team}}</h2>
+
+
+<table class="table table-bordered table-dark table-sm">
+	{% for key, value in teamstats.iteritems() %}
+   
+	   <tr>
+	   		
+	        	<th class="text-right"> {{ key | safe }} </th>
+        	
+        			<td> {{ value | safe }} </td>
+	   </tr>
+	 
+{% endfor %}
+</table>
