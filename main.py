@@ -15,8 +15,14 @@ def home():
 	Teams_URL = "https://statsapi.web.nhl.com/api/v1/teams"
 	r = requests.get(Teams_URL)
 	r = r.json()
+	return render_template("home.html")
+
+@app.route('/.html')
+def home():
+	Teams_URL = "https://statsapi.web.nhl.com/api/v1/teams"
+	r = requests.get(Teams_URL)
+	r = r.json()
 	return r
-	#return render_template("home.html")
 
 @app.route('/teamID/<ID>.html')
 def teams(ID):
