@@ -12,15 +12,12 @@ app = Flask(__name__)
 
 @app.route('/.html')
 def home():
-	Teams_URL = "https://statsapi.web.nhl.com/api/v1/teams"
-	r = requests.get(Teams_URL)
-	r = r.json()
 	return render_template("home.html")
 
-@app.route('/.html')
-def home():
-	Teams_URL = "https://statsapi.web.nhl.com/api/v1/teams"
-	r = requests.get(Teams_URL)
+@app.route('/playerID/<playerID>.json')
+def player(playerID):
+	Player_URL = "https://statsapi.web.nhl.com/api/v1/people/"+playerID
+	r = requests.get(Player_URL)
 	r = r.json()
 	return r
 
