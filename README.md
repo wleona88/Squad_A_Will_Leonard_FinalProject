@@ -16,7 +16,7 @@ pip install jinja2
 
 ## Usage
 
-TBD
+You can use this app to find data about each NHL team from the league's API. The home endpoint provides instructions, but you can go directly to team stats using the teamID/# (where numbers 0-31 represent team IDs) or player data using the playerID/# (player IDs are 7 digit numbers) endpoints.
 
 ## Contributing
 
